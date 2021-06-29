@@ -1,3 +1,754 @@
-.App {
-  text-align: center;
+.app {
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(31, 50, 78, 0.8)), color-stop(50%, rgba(250, 104, 0, 0.3)), to(rgba(31, 50, 78, 0.8)));
+  background: linear-gradient(90deg, rgba(31, 50, 78, 0.8) 0%, rgba(250, 104, 0, 0.3) 50%, rgba(31, 50, 78, 0.8) 100%);
 }
+
+.app__container {
+  width: 99vw;
+  max-width: var(--maxWidth);
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(31, 50, 78, 0.5)), color-stop(51.62%, rgba(117, 81, 55, 0.5)), color-stop(99.99%, rgba(31, 50, 78, 0.5)));
+  background: linear-gradient(90deg, rgba(31, 50, 78, 0.5) 0%, rgba(117, 81, 55, 0.5) 51.62%, rgba(31, 50, 78, 0.5) 99.99%);
+  position: relative;
+  z-index: 1;
+}
+
+.app__header {
+  width: 100%;
+  padding: 0.5rem;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(249, 178, 78, 0.5)), to(#1c547c));
+  background: linear-gradient(0deg, rgba(249, 178, 78, 0.5) 0%, #1c547c 100%);
+}
+
+.app__logoContainer {
+  z-index: 999;
+  width: 10rem;
+}
+
+.app__logoContainer .logo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.app__docketContainer {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 800px;
+  min-height: 80vh;
+  background: rgba(31, 50, 78, 0.5);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(31, 50, 78, 0.8)), to(rgba(31, 50, 78, 0.1)));
+  background: linear-gradient(180deg, rgba(31, 50, 78, 0.8) 0%, rgba(31, 50, 78, 0.1) 100%);
+  border-radius: 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0.5rem;
+  z-index: 999;
+}
+
+.app__inputContainer {
+  background: rgba(31, 50, 78, 0.1);
+  -webkit-box-shadow: -3px -3px 5px rgba(0, 0, 0, 0.25), 3px 3px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: -3px -3px 5px rgba(0, 0, 0, 0.25), 3px 3px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 0.25rem;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.app__inputWrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background: #fff;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.app__clear {
+  border-left: 0.1rem solid #ddd;
+  font-size: 1.5rem;
+  color: maroon;
+  cursor: pointer;
+}
+
+.app__listContainer {
+  margin: 0.5rem 0;
+  padding: 0.3rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.app__input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: none;
+  outline: none;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  color: #081b38;
+}
+
+.app__add {
+  border: none;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #ddd;
+  border-radius: 0 0.25rem 0.25rem 0;
+  background: #1f324e;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+}
+
+.app__add:hover {
+  color: #fff;
+}
+
+.app__iconAdd {
+  margin-right: 0.08rem;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.app__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.3rem 0;
+  padding: 0.2rem;
+  list-style: none;
+  background: rgba(250, 104, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+  border-radius: 0.25rem;
+}
+
+.app__list input[type="Checkbox"] {
+  width: 0.8rem;
+  height: 0.8rem;
+  cursor: pointer;
+}
+
+.app__list > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 0.15rem;
+  margin-right: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #c4c4c4;
+  cursor: pointer;
+  -webkit-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+.app__list > span:last-child {
+  margin-right: 0;
+}
+
+.app__list > span:hover {
+  background: #fff;
+}
+
+.app__docketText {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  color: #ddd;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.app__docketText--done {
+  text-decoration: line-through;
+}
+
+.app__iconEdit {
+  color: #064606;
+  font-size: 0.8rem;
+}
+
+.app__iconEdit--disabled {
+  color: #888;
+}
+
+.app__iconTrash {
+  color: #581313;
+  font-size: 0.8rem;
+}
+
+.app__clearDocket {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.25rem;
+  color: #1f324e;
+  background: transparent;
+  border: 0.12rem solid #1f324e;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 2px #222;
+          box-shadow: 0 0 2px #222;
+  -webkit-transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.app__clearDocket:hover {
+  color: #fff;
+  background: #1f324e;
+}
+
+.bg__horizontalLines {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  width: 100%;
+  height: 0.8rem;
+  z-index: -1;
+}
+
+.bg__horizontalLines > span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.bg__horizontalLines > span:nth-child(1) {
+  top: 0;
+}
+
+.bg__horizontalLines > span:nth-child(2) {
+  top: 50%;
+}
+
+.bg__horizontalLines > span:nth-child(3) {
+  top: 100%;
+}
+
+.bg__verticalLines {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 0.8rem;
+  height: 100%;
+  z-index: -1;
+}
+
+.bg__verticalLines > span {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.bg__verticalLines > span:nth-child(1) {
+  left: 0;
+}
+
+.bg__verticalLines > span:nth-child(2) {
+  left: 50%;
+}
+
+.bg__verticalLines > span:nth-child(3) {
+  left: 100%;
+}
+
+.bg__waveLines {
+  position: absolute;
+  top: 18%;
+  left: -2%;
+  width: 105%;
+  height: 15rem;
+  z-index: -1;
+  background-color: transparent;
+  border: 1px solid rgba(6, 43, 61, 0.5);
+  border-radius: 19% 81% 34% 66% / 100% 0% 100% 0%;
+}
+
+.bg__waveLines > span {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid rgba(6, 43, 61, 0.5);
+  border-radius: 19% 81% 34% 66% / 100% 0% 100% 0%;
+}
+
+.bg__waveLines > span:nth-child(1) {
+  top: 3%;
+}
+
+.bg__waveLines > span:nth-child(2) {
+  top: 6%;
+}
+
+.bg__waveLines > span:nth-child(3) {
+  top: 9%;
+}
+
+.bg__waveLines > span:nth-child(4) {
+  top: 12%;
+}
+
+.bg__waveLines > span:nth-child(5) {
+  top: 15%;
+}
+
+.bg__waveLines > span:nth-child(6) {
+  top: 18%;
+}
+
+.bg__waveLines > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bg__waveLines > div small {
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fa6800), to(#1f324e));
+  background: linear-gradient(180deg, #fa6800 0%, #1f324e 100%);
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.bg__waveLines > div small:nth-child(1) {
+  top: 25%;
+  left: 5%;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.bg__waveLines > div small:nth-child(2) {
+  top: 2%;
+  right: 3%;
+  height: 2rem;
+  width: 2rem;
+}
+
+.bg__waveLines > div small:nth-child(3) {
+  left: 10%;
+  bottom: -18%;
+  height: 2rem;
+  width: 2rem;
+}
+
+.bg__waveLines > div small:nth-child(4) {
+  left: 2%;
+  bottom: -16%;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.bg__shapes-1 {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  width: 50%;
+  height: 10rem;
+  z-index: -2;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(250, 104, 0, 0.5)), to(rgba(31, 50, 78, 0.5)));
+  background: linear-gradient(0deg, rgba(250, 104, 0, 0.5), rgba(31, 50, 78, 0.5));
+  -webkit-box-shadow: 0px 0px 2px black;
+          box-shadow: 0px 0px 2px black;
+  border-radius: 45% 55% 0% 100% / 100% 51% 49% 0%;
+}
+
+.bg__shapes-1 > span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(250, 104, 0, 0.5)), to(rgba(31, 50, 78, 0.5)));
+  background: linear-gradient(0deg, rgba(250, 104, 0, 0.5), rgba(31, 50, 78, 0.5));
+  -webkit-box-shadow: 0px 0px 2px black;
+          box-shadow: 0px 0px 2px black;
+  border-radius: 45% 55% 0% 100% / 100% 51% 49% 0%;
+}
+
+.bg__shapes-1 > span:nth-child(1) {
+  top: 25%;
+}
+
+.bg__shapes-1 > span:nth-child(2) {
+  top: 50%;
+}
+
+.bg__shapes-2 {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.bg__shapes-2 > span {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  z-index: -1;
+}
+
+.bg__shapes-2 > span:nth-child(1) {
+  top: 5%;
+  left: 1%;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 65% 35% 45% 55% / 51% 16% 84% 49%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(249, 178, 78, 0.5)), to(rgba(28, 84, 124, 0.8)));
+  background: linear-gradient(180deg, rgba(249, 178, 78, 0.5) 0%, rgba(28, 84, 124, 0.8) 100%);
+  -webkit-box-shadow: 0px 0px 2px black;
+          box-shadow: 0px 0px 2px black;
+}
+
+.bg__shapes-2 > span:nth-child(2) {
+  top: 1%;
+  right: 1%;
+  border-radius: 43% 27% 69% 45% / 72% 39% 62% 9%;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(61, 17, 131, 0.3)), to(rgba(185, 133, 19, 0.3)));
+  background: linear-gradient(90deg, rgba(61, 17, 131, 0.3) 0%, rgba(185, 133, 19, 0.3) 100%);
+  -webkit-box-shadow: 0px 0px 2px black;
+          box-shadow: 0px 0px 2px black;
+}
+
+.bg__shapes-2 > span:nth-child(3) {
+  top: 2%;
+  right: 2%;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 43% 27% 69% 45% / 72% 39% 62% 9%;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(61, 17, 131, 0.3)), to(rgba(185, 133, 19, 0.3)));
+  background: linear-gradient(90deg, rgba(61, 17, 131, 0.3) 0%, rgba(185, 133, 19, 0.3) 100%);
+  -webkit-box-shadow: 0px 0px 2px black;
+          box-shadow: 0px 0px 2px black;
+}
+
+.bg__shapes-2 > span:nth-child(4) {
+  bottom: 1%;
+  left: 1%;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 62% 3% 72% 0% / 39% 40% 37% 0%;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(249, 178, 78, 0.5)), to(rgba(94, 11, 69, 0.5)));
+  background: linear-gradient(90deg, rgba(249, 178, 78, 0.5) 0%, rgba(94, 11, 69, 0.5) 100%);
+  -webkit-box-shadow: 0px 0px 2px black;
+          box-shadow: 0px 0px 2px black;
+}
+
+.bg__shapes-2 > span:nth-child(5) {
+  bottom: 2%;
+  left: 2%;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 62% 3% 72% 0% / 39% 40% 37% 0%;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(249, 178, 78, 0.5)), to(rgba(94, 11, 69, 0.5)));
+  background: linear-gradient(90deg, rgba(249, 178, 78, 0.5) 0%, rgba(94, 11, 69, 0.5) 100%);
+  -webkit-box-shadow: 0px 0px 2px black;
+          box-shadow: 0px 0px 2px black;
+}
+
+@media screen and (min-width: 1024px) {
+  .app__container {
+    width: 95vw;
+  }
+  .app__header {
+    padding: 1rem;
+  }
+  .app__logoContainer {
+    width: 15rem;
+  }
+  .app__docketContainer {
+    width: 80%;
+    border-radius: 0.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    padding: 2rem;
+  }
+  .app__inputContainer {
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 3rem;
+    padding: 0.3rem;
+  }
+  .app__inputWrapper {
+    border-radius: 0.25rem 0 0 0.25rem;
+  }
+  .app__clear {
+    border-left: 0.1rem solid #ddd;
+    font-size: 2rem;
+  }
+  .app__add {
+    padding: 0.5rem 2rem;
+  }
+  .app__listContainer {
+    margin: 1rem 0;
+    padding: 0.3rem;
+  }
+  .app__input {
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+  }
+  .app__add {
+    letter-spacing: 0.1rem;
+    font-size: 1.2rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .app__iconAdd {
+    margin-right: 0.25rem;
+    font-size: 1rem;
+  }
+  .app__list {
+    margin: 0.5rem 0;
+    padding: 0.3rem;
+    border-radius: 0.25rem;
+  }
+  .app__list input[type="Checkbox"] {
+    width: 1rem;
+    height: 1rem;
+  }
+  .app__list > span {
+    border-radius: 0.15rem;
+    margin-right: 0.8rem;
+    width: 2rem;
+    height: 2rem;
+  }
+  .app__docketText {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+  }
+  .app__iconEdit {
+    font-size: 1.2rem;
+  }
+  .app__iconTrash {
+    font-size: 1.2rem;
+  }
+  .app__clearDocket {
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.25rem;
+    border: 0.12rem solid #1f324e;
+  }
+  .bg__horizontalLines {
+    top: 2.5rem;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+  }
+  .bg__horizontalLines > span {
+    left: 0;
+    width: 100%;
+    height: 1px;
+  }
+  .bg__horizontalLines > span:nth-child(1) {
+    top: 0;
+  }
+  .bg__horizontalLines > span:nth-child(2) {
+    top: 50%;
+  }
+  .bg__horizontalLines > span:nth-child(3) {
+    top: 100%;
+  }
+  .bg__verticalLines {
+    top: 0;
+    left: 25%;
+    width: 1rem;
+    height: 100%;
+  }
+  .bg__verticalLines > span {
+    top: 0;
+    width: 1px;
+    height: 100%;
+  }
+  .bg__verticalLines > span:nth-child(1) {
+    left: 0;
+  }
+  .bg__verticalLines > span:nth-child(2) {
+    left: 50%;
+  }
+  .bg__verticalLines > span:nth-child(3) {
+    left: 100%;
+  }
+  .bg__waveLines {
+    top: 20%;
+    left: -2%;
+    width: 105%;
+    height: 20rem;
+  }
+  .bg__waveLines > span {
+    top: 0;
+    left: 0%;
+  }
+  .bg__waveLines > span:nth-child(1) {
+    top: 3%;
+  }
+  .bg__waveLines > span:nth-child(2) {
+    top: 6%;
+  }
+  .bg__waveLines > span:nth-child(3) {
+    top: 9%;
+  }
+  .bg__waveLines > span:nth-child(4) {
+    top: 12%;
+  }
+  .bg__waveLines > span:nth-child(5) {
+    top: 15%;
+  }
+  .bg__waveLines > span:nth-child(6) {
+    top: 18%;
+  }
+  .bg__waveLines > div {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .bg__waveLines > div small {
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  }
+  .bg__waveLines > div small:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    height: 2rem;
+    width: 2rem;
+  }
+  .bg__waveLines > div small:nth-child(2) {
+    top: 2%;
+    right: 3%;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  .bg__waveLines > div small:nth-child(3) {
+    left: 10%;
+    bottom: -15%;
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+  .bg__waveLines > div small:nth-child(4) {
+    left: 3%;
+    bottom: -14.5%;
+    height: 2rem;
+    width: 2rem;
+  }
+  .bg__shapes-1 {
+    bottom: 0%;
+    right: 0%;
+    width: 50%;
+    height: 20rem;
+  }
+  .bg__shapes-1 > span {
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .bg__shapes-1 > span:nth-child(1) {
+    top: 25%;
+  }
+  .bg__shapes-1 > span:nth-child(2) {
+    top: 50%;
+  }
+  .bg__shapes-2 {
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+  }
+  .bg__shapes-2 > span {
+    width: 20rem;
+    height: 20rem;
+  }
+  .bg__shapes-2 > span:nth-child(1) {
+    top: 5%;
+    left: 1%;
+    width: 15rem;
+    height: 15rem;
+  }
+  .bg__shapes-2 > span:nth-child(2) {
+    top: 1%;
+    right: 1%;
+  }
+  .bg__shapes-2 > span:nth-child(3) {
+    top: 2%;
+    right: 2%;
+    width: 15rem;
+    height: 15rem;
+  }
+  .bg__shapes-2 > span:nth-child(4) {
+    bottom: 1%;
+    left: 1%;
+    width: 15rem;
+    height: 15rem;
+  }
+  .bg__shapes-2 > span:nth-child(5) {
+    bottom: 1.8%;
+    left: 1.5%;
+    width: 10rem;
+    height: 10rem;
+  }
+}
+/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,713 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(31, 50, 78, 0.8) 0%,
+    rgba(250, 104, 0, 0.3) 50%,
+    rgba(31, 50, 78, 0.8) 100%
+  );
+  &__container {
+    width: 99vw;
+    max-width: var(--maxWidth);
+    min-height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    background: linear-gradient(
+      90deg,
+      rgba(31, 50, 78, 0.5) 0%,
+      rgba(117, 81, 55, 0.5) 51.62%,
+      rgba(31, 50, 78, 0.5) 99.99%
+    );
+    position: relative;
+    z-index: 1;
+  }
+
+  &__header {
+    width: 100%;
+    padding: 0.5rem;
+    background: linear-gradient(
+      0deg,
+      rgba(249, 178, 78, 0.5) 0%,
+      rgba(28, 84, 124, 1) 100%
+    );
+  }
+  &__logoContainer {
+    z-index: 999;
+    width: 10rem;
+    & .logo {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+  }
+  &__docketContainer {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 800px;
+    min-height: 80vh;
+    background: rgba(31, 50, 78, 0.5);
+    background: linear-gradient(
+      180deg,
+      rgba(31, 50, 78, 0.8) 0%,
+      rgba(31, 50, 78, 0.1) 100%
+    );
+    border-radius: 0.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 0.5rem;
+    z-index: 999;
+  }
+  &__inputContainer {
+    background: rgba(31, 50, 78, 0.1);
+    box-shadow: -3px -3px 5px rgba(0, 0, 0, 0.25),
+      3px 3px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 0.25rem;
+    width: 100%;
+    height: 2.5rem;
+    padding: 0.1rem;
+    display: flex;
+  }
+  &__inputWrapper {
+    flex: 1;
+    background: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 0.25rem 0 0 0.25rem;
+  }
+
+  &__clear {
+    border-left: 0.1rem solid #ddd;
+    font-size: 1.5rem;
+    color: maroon;
+    cursor: pointer;
+  }
+
+  &__listContainer {
+    margin: 0.5rem 0;
+    padding: 0.3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    color: rgb(8, 27, 56);
+  }
+
+  &__add {
+    border: none;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #ddd;
+    border-radius: 0 0.25rem 0.25rem 0;
+    background: rgba(31, 50, 78, 1);
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    &:hover {
+      color: #fff;
+    }
+  }
+  &__iconAdd {
+    margin-right: 0.08rem;
+    color: #fff;
+    font-size: 0.8rem;
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    margin: 0.3rem 0;
+    padding: 0.2rem;
+    list-style: none;
+    background: rgba(250, 104, 0, 0.5);
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+    border-radius: 0.25rem;
+    & input[type="Checkbox"] {
+      width: 0.8rem;
+      height: 0.8rem;
+      cursor: pointer;
+    }
+
+    & > span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.15rem;
+      margin-right: 0.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: #c4c4c4;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        background: #fff;
+      }
+    }
+  }
+  &__docketText {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    color: #ddd;
+    flex: 1;
+  }
+  &__docketText--done {
+    text-decoration: line-through;
+  }
+
+  &__iconEdit {
+    color: rgb(6, 70, 6);
+    font-size: 0.8rem;
+  }
+  &__iconEdit--disabled {
+    color: #888;
+  }
+  &__iconTrash {
+    color: rgb(88, 19, 19);
+    font-size: 0.8rem;
+  }
+
+  &__clearDocket {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.25rem;
+    color: rgba(31, 50, 78, 1);
+    background: transparent;
+    border: 0.12rem solid rgba(31, 50, 78, 1);
+    cursor: pointer;
+    box-shadow: 0 0 2px #222;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+    &:hover {
+      color: #fff;
+      background: rgba(31, 50, 78, 1);
+    }
+  }
+}
+
+.bg {
+  &__horizontalLines {
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+    width: 100%;
+    height: 0.8rem;
+    z-index: -1;
+    & > span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.3);
+      &:nth-child(1) {
+        top: 0;
+      }
+      &:nth-child(2) {
+        top: 50%;
+      }
+      &:nth-child(3) {
+        top: 100%;
+      }
+    }
+  }
+  &__verticalLines {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 0.8rem;
+    height: 100%;
+    z-index: -1;
+    & > span {
+      position: absolute;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      &:nth-child(1) {
+        left: 0;
+      }
+      &:nth-child(2) {
+        left: 50%;
+      }
+      &:nth-child(3) {
+        left: 100%;
+      }
+    }
+  }
+  &__waveLines {
+    position: absolute;
+    top: 18%;
+    left: -2%;
+    width: 105%;
+    height: 15rem;
+    z-index: -1;
+    background-color: transparent;
+    border: 1px solid rgba(6, 43, 61, 0.5);
+    border-radius: 19% 81% 34% 66% / 100% 0% 100% 0%;
+    & > span {
+      position: absolute;
+      top: 0;
+      left: 0%;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: 1px solid rgba(6, 43, 61, 0.5);
+      border-radius: 19% 81% 34% 66% / 100% 0% 100% 0%;
+      &:nth-child(1) {
+        top: 3%;
+      }
+      &:nth-child(2) {
+        top: 6%;
+      }
+      &:nth-child(3) {
+        top: 9%;
+      }
+      &:nth-child(4) {
+        top: 12%;
+      }
+      &:nth-child(5) {
+        top: 15%;
+      }
+      &:nth-child(6) {
+        top: 18%;
+      }
+    }
+    & > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      & small {
+        position: absolute;
+        display: inline-block;
+        border-radius: 50%;
+        background: linear-gradient(180deg, #fa6800 0%, #1f324e 100%);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+
+        &:nth-child(1) {
+          top: 25%;
+          left: 5%;
+          height: 1.5rem;
+          width: 1.5rem;
+        }
+        &:nth-child(2) {
+          top: 2%;
+          right: 3%;
+          height: 2rem;
+          width: 2rem;
+        }
+
+        &:nth-child(3) {
+          left: 10%;
+          bottom: -18%;
+          height: 2rem;
+          width: 2rem;
+        }
+        &:nth-child(4) {
+          left: 2%;
+          bottom: -16%;
+          height: 1.5rem;
+          width: 1.5rem;
+        }
+      }
+    }
+  }
+  &__shapes-1 {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    width: 50%;
+    height: 10rem;
+    z-index: -2;
+    background: linear-gradient(
+      0deg,
+      rgba(250, 104, 0, 0.5),
+      rgba(31, 50, 78, 0.5)
+    );
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+    border-radius: 45% 55% 0% 100% / 100% 51% 49% 0%;
+
+    & > span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        0deg,
+        rgba(250, 104, 0, 0.5),
+        rgba(31, 50, 78, 0.5)
+      );
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+      border-radius: 45% 55% 0% 100% / 100% 51% 49% 0%;
+
+      &:nth-child(1) {
+        top: 25%;
+      }
+      &:nth-child(2) {
+        top: 50%;
+      }
+    }
+  }
+  &__shapes-2 {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+
+    & > span {
+      position: absolute;
+      width: 10rem;
+      height: 10rem;
+      z-index: -1;
+      &:nth-child(1) {
+        top: 5%;
+        left: 1%;
+        width: 7.5rem;
+        height: 7.5rem;
+        border-radius: 65% 35% 45% 55% / 51% 16% 84% 49%;
+        background: linear-gradient(
+          180deg,
+          rgba(249, 178, 78, 0.5) 0%,
+          rgba(28, 84, 124, 0.8) 100%
+        );
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+      }
+      &:nth-child(2) {
+        top: 1%;
+        right: 1%;
+        border-radius: 43% 27% 69% 45% / 72% 39% 62% 9%;
+        background: linear-gradient(
+          90deg,
+          rgba(61, 17, 131, 0.3) 0%,
+          rgba(185, 133, 19, 0.3) 100%
+        );
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+      }
+      &:nth-child(3) {
+        top: 2%;
+        right: 2%;
+        width: 7.5rem;
+        height: 7.5rem;
+        border-radius: 43% 27% 69% 45% / 72% 39% 62% 9%;
+        background: linear-gradient(
+          90deg,
+          rgba(61, 17, 131, 0.3) 0%,
+          rgba(185, 133, 19, 0.3) 100%
+        );
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+      }
+      &:nth-child(4) {
+        bottom: 1%;
+        left: 1%;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 62% 3% 72% 0% / 39% 40% 37% 0%;
+        background: linear-gradient(
+          90deg,
+          rgba(249, 178, 78, 0.5) 0%,
+          rgba(94, 11, 69, 0.5) 100%
+        );
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+      }
+      &:nth-child(5) {
+        bottom: 2%;
+        left: 2%;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 62% 3% 72% 0% / 39% 40% 37% 0%;
+        background: linear-gradient(
+          90deg,
+          rgba(249, 178, 78, 0.5) 0%,
+          rgba(94, 11, 69, 0.5) 100%
+        );
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .app {
+    &__container {
+      width: 95vw;
+    }
+
+    &__header {
+      padding: 1rem;
+    }
+    &__logoContainer {
+      width: 15rem;
+    }
+    &__docketContainer {
+      width: 80%;
+      border-radius: 0.5rem;
+      border-radius: 0 0 0.5rem 0.5rem;
+      padding: 2rem;
+    }
+    &__inputContainer {
+      border-radius: 0.5rem;
+      width: 100%;
+      height: 3rem;
+      padding: 0.3rem;
+    }
+    &__inputWrapper {
+      border-radius: 0.25rem 0 0 0.25rem;
+    }
+
+    &__clear {
+      border-left: 0.1rem solid #ddd;
+      font-size: 2rem;
+    }
+    &__add {
+      padding: 0.5rem 2rem;
+    }
+    &__listContainer {
+      margin: 1rem 0;
+      padding: 0.3rem;
+    }
+    &__input {
+      padding: 0.3rem 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+    }
+    &__add {
+      letter-spacing: 0.1rem;
+      font-size: 1.2rem;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    &__iconAdd {
+      margin-right: 0.25rem;
+      font-size: 1rem;
+    }
+    &__list {
+      margin: 0.5rem 0;
+      padding: 0.3rem;
+      border-radius: 0.25rem;
+      & input[type="Checkbox"] {
+        width: 1rem;
+        height: 1rem;
+      }
+
+      & > span {
+        border-radius: 0.15rem;
+        margin-right: 0.8rem;
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+    &__docketText {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+    }
+
+    &__iconEdit {
+      font-size: 1.2rem;
+    }
+    &__iconTrash {
+      font-size: 1.2rem;
+    }
+    &__clearDocket {
+      font-size: 1rem;
+      letter-spacing: 0.15rem;
+      padding: 0.5rem 0.8rem;
+      border-radius: 0.25rem;
+      border: 0.12rem solid rgba(31, 50, 78, 1);
+    }
+  }
+
+  .bg {
+    &__horizontalLines {
+      top: 2.5rem;
+      left: 0;
+      width: 100%;
+      height: 1rem;
+
+      & > span {
+        left: 0;
+        width: 100%;
+        height: 1px;
+
+        &:nth-child(1) {
+          top: 0;
+        }
+        &:nth-child(2) {
+          top: 50%;
+        }
+        &:nth-child(3) {
+          top: 100%;
+        }
+      }
+    }
+    &__verticalLines {
+      top: 0;
+      left: 25%;
+      width: 1rem;
+      height: 100%;
+
+      & > span {
+        top: 0;
+        width: 1px;
+        height: 100%;
+
+        &:nth-child(1) {
+          left: 0;
+        }
+        &:nth-child(2) {
+          left: 50%;
+        }
+        &:nth-child(3) {
+          left: 100%;
+        }
+      }
+    }
+    &__waveLines {
+      top: 20%;
+      left: -2%;
+      width: 105%;
+      height: 20rem;
+
+      & > span {
+        top: 0;
+        left: 0%;
+        &:nth-child(1) {
+          top: 3%;
+        }
+        &:nth-child(2) {
+          top: 6%;
+        }
+        &:nth-child(3) {
+          top: 9%;
+        }
+        &:nth-child(4) {
+          top: 12%;
+        }
+        &:nth-child(5) {
+          top: 15%;
+        }
+        &:nth-child(6) {
+          top: 18%;
+        }
+      }
+      & > div {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        & small {
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+
+          &:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            height: 2rem;
+            width: 2rem;
+          }
+          &:nth-child(2) {
+            top: 2%;
+            right: 3%;
+            height: 2.5rem;
+            width: 2.5rem;
+          }
+
+          &:nth-child(3) {
+            left: 10%;
+            bottom: -15%;
+            height: 2.2rem;
+            width: 2.2rem;
+          }
+          &:nth-child(4) {
+            left: 3%;
+            bottom: -14.5%;
+            height: 2rem;
+            width: 2rem;
+          }
+        }
+      }
+    }
+    &__shapes-1 {
+      bottom: 0%;
+      right: 0%;
+      width: 50%;
+      height: 20rem;
+
+      & > span {
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &:nth-child(1) {
+          top: 25%;
+        }
+        &:nth-child(2) {
+          top: 50%;
+        }
+      }
+    }
+    &__shapes-2 {
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+
+      & > span {
+        width: 20rem;
+        height: 20rem;
+
+        &:nth-child(1) {
+          top: 5%;
+          left: 1%;
+          width: 15rem;
+          height: 15rem;
+        }
+        &:nth-child(2) {
+          top: 1%;
+          right: 1%;
+        }
+        &:nth-child(3) {
+          top: 2%;
+          right: 2%;
+          width: 15rem;
+          height: 15rem;
+        }
+        &:nth-child(4) {
+          bottom: 1%;
+          left: 1%;
+          width: 15rem;
+          height: 15rem;
+        }
+        &:nth-child(5) {
+          bottom: 1.8%;
+          left: 1.5%;
+          width: 10rem;
+          height: 10rem;
+        }
+      }
+    }
+  }
+}
