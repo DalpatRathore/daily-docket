@@ -1,4 +1,37 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+const logoVariants1 = {
+  enter: {
+    pathLength: 0,
+  },
+  center: {
+    pathLength: 1,
+    transition: {
+      duration: 5,
+    },
+  },
+};
+
+const iconVariants = {
+  enter: {
+    pathLength: 0,
+    fill: "url(#paint09999_radial)",
+  },
+  center: {
+    pathLength: 1,
+    fill: "url(#paint0_radial)",
+    transition: {
+      pathLength: {
+        duration: 5,
+        delay: 5,
+      },
+      fill: {
+        delay: 10,
+      },
+    },
+  },
+};
 
 const Logo = () => {
   return (
@@ -10,105 +43,146 @@ const Logo = () => {
     >
       <rect width="400" height="150" rx="10" fill="white" fillOpacity="0.8" />
       <g filter="url(#filter0_d)">
-        <path
+        <motion.path
           d="M334.053 101.32H341V93H305V101.32H318.263V125H325.842V101.32"
           stroke="#1F324E"
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
+          variants={logoVariants1}
+          initial="enter"
+          animate="center"
         />
-        <path
+        <motion.path
           d="M267.107 116.547H292V125H258V93H292V100.849H267.107V108.698H285.929"
           stroke="#1F324E"
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
+          variants={logoVariants1}
+          initial="enter"
+          animate="center"
         />
-        <path
+        <motion.path
           d="M217.636 125H210V93H218.909V104.333L231.636 93H245L218.909 115L231.636 125H245L232.909 114.333"
           stroke="#1F324E"
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
+          variants={logoVariants1}
+          initial="enter"
+          animate="center"
         />
-        <path
+        <motion.path
           d="M183.964 116.385H178.378C169.066 115.154 170.928 102.846 178.378 102.231H197V93H178.378C156.651 94.8462 159.134 124.385 178.378 125H197V116.385H192.655"
           stroke="#1F324E"
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
+          variants={logoVariants1}
+          initial="enter"
+          animate="center"
         />
-        <path
+        <motion.path
           d="M143.75 108.5C143.75 113.056 140.056 116.75 135.5 116.75C130.944 116.75 127.25 113.056 127.25 108.5C127.25 103.944 130.944 100.25 135.5 100.25C140.056 100.25 143.75 103.944 143.75 108.5Z"
           stroke="#1F324E"
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
+          variants={logoVariants1}
+          initial="enter"
+          animate="center"
         />
-        <path
+        <motion.path
           d="M152 108.5C152 117.613 144.613 125 135.5 125C126.387 125 119 117.613 119 108.5C119 99.3873 126.387 92 135.5 92C144.613 92 152 99.3873 152 108.5Z"
           stroke="#1F324E"
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
+          variants={logoVariants1}
+          initial="enter"
+          animate="center"
         />
-        <path
+        <motion.path
           d="M81.927 108.5V117.5H94.8083C101.249 114.5 101.249 103.5 94.8083 101H74V125H94.8083C112.644 122 112.149 95 94.8083 93H74"
           stroke="#1F324E"
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
+          variants={logoVariants1}
+          initial="enter"
+          animate="center"
         />
       </g>
       <g filter="url(#filter1_d)">
-        <path
+        <motion.path
           d="M230.175 35.4462L227.635 32H219L229.667 48.7385V64H238.81V48.7385L251 32H240.841L234.746 41.8462"
           stroke="#1F324E"
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
+          variants={logoVariants1}
+          initial="enter"
+          animate="center"
         />
-        <path
+        <motion.path
           d="M182 64H208V55.5H182V32H190V48.5"
           stroke="#1F324E"
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
+          variants={logoVariants1}
+          initial="enter"
+          animate="center"
         />
-        <path
+        <motion.path
           d="M164 64H155V32H164V56"
           stroke="#1F324E"
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
+          variants={logoVariants1}
+          initial="enter"
+          animate="center"
         />
-        <path
+        <motion.path
           d="M127.19 54L132.62 64H142L127.19 39L112.38 64H103L121.266 32"
           stroke="#1F324E"
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
+          variants={logoVariants1}
+          initial="enter"
+          animate="center"
         />
-        <path
+        <motion.path
           d="M63.927 47.5V56.5H76.8083C83.249 53.5 83.249 42.5 76.8083 40H56V64H76.8083C94.6441 61 94.1486 34 76.8083 32H56"
           stroke="#1F324E"
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
+          variants={logoVariants1}
+          initial="enter"
+          animate="center"
         />
       </g>
       <g filter="url(#filter2_d)">
-        <path
+        <motion.path
           d="M333.791 39.5489L318 70H359.009C383.862 50.4734 384.794 26.6864 359.009 10L318 10L333.791 39.5489Z"
-          fill="url(#paint0_radial)"
           fillOpacity="0.6"
+          variants={iconVariants}
+          initial="enter"
+          animate="center"
         />
-        <path
+        <motion.path
           d="M342.854 56.5089C369.445 60.0592 369.792 18.8757 342.854 22.071L318 70H359.009C383.862 50.4734 384.794 26.6864 359.009 10L318 10L342.854 56.5089Z"
           stroke="#1F324E"
           strokeWidth="5"
           strokeLinecap="round"
           strokeLinejoin="round"
+          variants={iconVariants}
+          initial="enter"
+          animate="center"
         />
       </g>
       <path d="M380 111H378V96H380V111Z" fill="#1F324E" />

@@ -93,6 +93,19 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.25rem;
+  }
+  &__overlay--hidden {
+    display: none;
   }
   &__input {
     flex: 1;
@@ -105,14 +118,19 @@
     color: rgb(8, 27, 56);
   }
 
-  &__add {
+  &__submitBtn {
     border: none;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #ddd;
     border-radius: 0 0.25rem 0.25rem 0;
     background: rgba(31, 50, 78, 1);
+    background: linear-gradient(
+      -90deg,
+      rgb(20, 30, 48) 0%,
+      rgb(36, 59, 85) 100%
+    );
     cursor: pointer;
     padding: 0.3rem 0.5rem;
     &:hover {
@@ -120,7 +138,15 @@
     }
   }
   &__iconAdd {
-    margin-right: 0.08rem;
+    margin-right: 0.3rem;
+    color: #fff;
+    font-size: 0.7rem;
+  }
+  &__submitBtn--save {
+    letter-spacing: 0.05rem;
+    padding: 0.2rem 0.3rem;
+  }
+  &__iconSave {
     color: #fff;
     font-size: 0.8rem;
   }
@@ -131,13 +157,14 @@
     padding: 0.2rem;
     list-style: none;
     background: rgba(250, 104, 0, 0.5);
+    background: linear-gradient(
+      -90deg,
+      rgba(255, 212, 82, 0.8) 0%,
+      rgba(84, 74, 125, 0.8) 100%
+    );
+
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
     border-radius: 0.25rem;
-    & input[type="Checkbox"] {
-      width: 0.8rem;
-      height: 0.8rem;
-      cursor: pointer;
-    }
 
     & > span {
       display: flex;
@@ -158,16 +185,33 @@
         background: #fff;
       }
     }
+    & .app__editDisabled {
+      pointer-events: none;
+      cursor: default;
+    }
   }
-  &__docketText {
+  &__list--done {
+    background: rgba(83, 80, 78, 0.5);
+    background: linear-gradient(
+      -90deg,
+      rgba(60, 59, 63, 0.8) 0%,
+      rgba(96, 92, 60, 0.8) 100%
+    );
+  }
+  &__taskText {
     font-size: 0.8rem;
     font-weight: 500;
     letter-spacing: 0.05rem;
+    text-transform: capitalize;
     color: #ddd;
     flex: 1;
   }
-  &__docketText--done {
+  &__taskText--done {
     text-decoration: line-through;
+    color: #aaa;
+  }
+  &__iconDone {
+    color: rgb(8, 27, 56);
   }
 
   &__iconEdit {
@@ -199,10 +243,35 @@
     &:hover {
       color: #fff;
       background: rgba(31, 50, 78, 1);
+      background: linear-gradient(
+        -90deg,
+        rgb(20, 30, 48) 0%,
+        rgb(36, 59, 85) 100%
+      );
+    }
+  }
+  &__dontForget {
+    margin-top: 2rem;
+    width: 10rem;
+
+    & img {
+      width: 100%;
+      object-fit: contain;
+      display: block;
+      animation: revolve 5s linear infinite;
+      transform-origin: top center;
     }
   }
 }
-
+@keyframes revolve {
+  0%,
+  100% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+}
 .bg {
   &__horizontalLines {
     position: absolute;
@@ -481,9 +550,7 @@
       border-left: 0.1rem solid #ddd;
       font-size: 2rem;
     }
-    &__add {
-      padding: 0.5rem 2rem;
-    }
+
     &__listContainer {
       margin: 1rem 0;
       padding: 0.3rem;
@@ -494,23 +561,26 @@
       font-weight: bold;
       letter-spacing: 0.1rem;
     }
-    &__add {
+    &__submitBtn {
       letter-spacing: 0.1rem;
       font-size: 1.2rem;
       border-radius: 0 0.5rem 0.5rem 0;
+      padding: 0.5rem 1rem;
     }
     &__iconAdd {
       margin-right: 0.25rem;
+      font-size: 1rem;
+    }
+    &__submitBtn--save {
+      padding: 0.5rem 0.8rem;
+    }
+    &__iconSave {
       font-size: 1rem;
     }
     &__list {
       margin: 0.5rem 0;
       padding: 0.3rem;
       border-radius: 0.25rem;
-      & input[type="Checkbox"] {
-        width: 1rem;
-        height: 1rem;
-      }
 
       & > span {
         border-radius: 0.15rem;
@@ -519,7 +589,7 @@
         height: 2rem;
       }
     }
-    &__docketText {
+    &__taskText {
       font-size: 1rem;
       font-weight: 600;
       letter-spacing: 0.1rem;
@@ -537,6 +607,10 @@
       padding: 0.5rem 0.8rem;
       border-radius: 0.25rem;
       border: 0.12rem solid rgba(31, 50, 78, 1);
+    }
+    &__dontForget {
+      margin-top: 3rem;
+      width: 20rem;
     }
   }
 
