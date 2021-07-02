@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const logoVariants1 = {
+const logoVariants = {
   enter: {
     pathLength: 0,
   },
@@ -24,10 +24,9 @@ const iconVariants = {
     transition: {
       pathLength: {
         duration: 5,
-        delay: 5,
       },
       fill: {
-        delay: 10,
+        delay: 5,
       },
     },
   },
@@ -49,7 +48,7 @@ const Logo = () => {
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
-          variants={logoVariants1}
+          variants={logoVariants}
           initial="enter"
           animate="center"
         />
@@ -59,7 +58,7 @@ const Logo = () => {
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
-          variants={logoVariants1}
+          variants={logoVariants}
           initial="enter"
           animate="center"
         />
@@ -69,7 +68,7 @@ const Logo = () => {
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
-          variants={logoVariants1}
+          variants={logoVariants}
           initial="enter"
           animate="center"
         />
@@ -79,7 +78,7 @@ const Logo = () => {
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
-          variants={logoVariants1}
+          variants={logoVariants}
           initial="enter"
           animate="center"
         />
@@ -89,7 +88,7 @@ const Logo = () => {
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
-          variants={logoVariants1}
+          variants={logoVariants}
           initial="enter"
           animate="center"
         />
@@ -99,7 +98,7 @@ const Logo = () => {
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
-          variants={logoVariants1}
+          variants={logoVariants}
           initial="enter"
           animate="center"
         />
@@ -109,7 +108,7 @@ const Logo = () => {
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
-          variants={logoVariants1}
+          variants={logoVariants}
           initial="enter"
           animate="center"
         />
@@ -121,7 +120,7 @@ const Logo = () => {
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
-          variants={logoVariants1}
+          variants={logoVariants}
           initial="enter"
           animate="center"
         />
@@ -131,7 +130,7 @@ const Logo = () => {
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
-          variants={logoVariants1}
+          variants={logoVariants}
           initial="enter"
           animate="center"
         />
@@ -141,7 +140,7 @@ const Logo = () => {
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
-          variants={logoVariants1}
+          variants={logoVariants}
           initial="enter"
           animate="center"
         />
@@ -151,7 +150,7 @@ const Logo = () => {
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
-          variants={logoVariants1}
+          variants={logoVariants}
           initial="enter"
           animate="center"
         />
@@ -161,7 +160,7 @@ const Logo = () => {
           strokeWidth="5"
           strokeLinecap="square"
           strokeLinejoin="round"
-          variants={logoVariants1}
+          variants={logoVariants}
           initial="enter"
           animate="center"
         />
