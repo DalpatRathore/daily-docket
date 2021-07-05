@@ -148,6 +148,7 @@ function App() {
           <div className="app__logoContainer">
             <Logo></Logo>
           </div>
+          <p className="app__sloganText">Highly powered productivity tool</p>
         </header>
         <main className="app__docketContainer">
           <motion.form
@@ -253,8 +254,12 @@ function App() {
 
           {docket.length > 1 && (
             <button
-              disabled={isEditing ? "true" : ""}
-              className="app__clearDocket "
+              // disabled={isEditing ? "true" : ""}
+              className={
+                isEditing
+                  ? "app__clearDocket app__clearDocket--disabled"
+                  : "app__clearDocket"
+              }
               onClick={clearDocket}
             >
               Clear Docket
@@ -296,6 +301,9 @@ function App() {
           <span></span>
           <span></span>
           <span></span>
+        </div>
+        <div className="app__noteMsg">
+          <p>NOTE: Data stored locally</p>
         </div>
       </div>
     </div>

@@ -25,6 +25,9 @@
   &__header {
     width: 100%;
     padding: 0.5rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
     background: linear-gradient(
       0deg,
       rgba(249, 178, 78, 0.5) 0%,
@@ -33,7 +36,7 @@
   }
   &__logoContainer {
     z-index: 999;
-    width: 10rem;
+    width: 8.5rem;
     & .logo {
       width: 100%;
       height: 100%;
@@ -41,10 +44,29 @@
       object-fit: contain;
     }
   }
+  &__sloganText {
+    color: rgba(255, 165, 0, 0.85);
+    font-size: 0.45rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    font-weight: 500;
+    font-style: italic;
+    text-shadow: 0 0 0.11rem rgb(2, 14, 31);
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.05rem;
+      background: rgba(255, 165, 0, 0.85);
+    }
+  }
   &__docketContainer {
     margin: 0 auto;
     width: 90%;
-    max-width: 800px;
+    max-width: 850px;
     min-height: 80vh;
     background: rgba(31, 50, 78, 0.5);
     background: linear-gradient(
@@ -162,7 +184,6 @@
       rgba(255, 212, 82, 0.8) 0%,
       rgba(84, 74, 125, 0.8) 100%
     );
-
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
     border-radius: 0.25rem;
 
@@ -171,7 +192,7 @@
       align-items: center;
       justify-content: center;
       border-radius: 0.15rem;
-      margin-right: 0.5rem;
+      margin-right: 0.8rem;
       width: 1.5rem;
       height: 1.5rem;
       background: #c4c4c4;
@@ -250,6 +271,12 @@
       );
     }
   }
+  &__clearDocket--disabled {
+    pointer-events: none;
+    color: rgba(31, 50, 78, 0.65);
+    border: 0.12rem solid rgba(31, 50, 78, 0.5);
+    box-shadow: none;
+  }
   &__dontForget {
     margin-top: 2rem;
     width: 10rem;
@@ -260,6 +287,22 @@
       display: block;
       animation: revolve 5s linear infinite;
       transform-origin: top center;
+    }
+  }
+  &__noteMsg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    & p {
+      border-radius: 0.15rem 0 0 0;
+      padding: 0.3rem 0.5rem;
+      background: rgba(0, 0, 0, 0.2);
+      text-transform: capitalize;
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+      font-size: 0.5rem;
+      color: #bbb;
+      text-shadow: 0 0 2px rgba(0, 0, 0, 1);
     }
   }
 }
@@ -518,6 +561,29 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .app {
+    &__header {
+      padding: 0.8rem;
+    }
+    &__logoContainer {
+      width: 9rem;
+    }
+    &__sloganText {
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+      font-weight: 600;
+      &::before {
+        height: 0.05rem;
+      }
+    }
+    &__noteMsg p {
+      padding: 0.3rem 0.5rem;
+      font-size: 0.7rem;
+    }
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .app {
     &__container {
@@ -528,7 +594,15 @@
       padding: 1rem;
     }
     &__logoContainer {
-      width: 15rem;
+      width: 14rem;
+    }
+    &__sloganText {
+      font-size: 1.3rem;
+      letter-spacing: 0.1rem;
+      font-weight: bolder;
+      &::before {
+        height: 0.08rem;
+      }
     }
     &__docketContainer {
       width: 80%;
@@ -584,7 +658,6 @@
 
       & > span {
         border-radius: 0.15rem;
-        margin-right: 0.8rem;
         width: 2rem;
         height: 2rem;
       }
@@ -606,11 +679,17 @@
       letter-spacing: 0.15rem;
       padding: 0.5rem 0.8rem;
       border-radius: 0.25rem;
-      border: 0.12rem solid rgba(31, 50, 78, 1);
     }
     &__dontForget {
       margin-top: 3rem;
       width: 20rem;
+    }
+    &__noteMsg > p {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+      text-shadow: 0 0 2px rgba(0, 0, 0, 1);
     }
   }
 
