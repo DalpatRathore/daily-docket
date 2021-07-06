@@ -71,6 +71,20 @@ function App() {
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
 
+  let dateStr = new Date().toDateString();
+  let timeStr = new Date().toLocaleTimeString();
+  const [time, setTime] = useState(timeStr);
+  const [date, setDate] = useState(dateStr);
+
+  const updateTime = () => {
+    dateStr = new Date().toDateString();
+    timeStr = new Date().toLocaleTimeString();
+    setTime(timeStr);
+    setDate(dateStr);
+  };
+
+  setInterval(updateTime, 1000);
+
   /* --- Adding task to the Docket ---*/
 
   const submitTask = e => {
@@ -145,6 +159,10 @@ function App() {
     <div className="app">
       <div className="app__container">
         <header className="app__header">
+          <div className="app__dateTimeContainer">
+            <span className="app__dateTime app__time">{time}</span>
+            <span className="app__dateTime app__date">{date}</span>
+          </div>
           <div className="app__logoContainer">
             <Logo></Logo>
           </div>
@@ -303,7 +321,7 @@ function App() {
           <span></span>
         </div>
         <div className="app__noteMsg">
-          <p>NOTE: Data stored locally</p>
+          <p>NOTE: Stores data locally</p>
         </div>
       </div>
     </div>

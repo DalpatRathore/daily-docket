@@ -18,7 +18,7 @@
 
 .app__header {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.5rem 0.3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,9 +32,64 @@
   background: linear-gradient(0deg, rgba(249, 178, 78, 0.5) 0%, #1c547c 100%);
 }
 
+.app__sloganText {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: italic;
+  background: linear-gradient(45deg, #092349 0%, #092349 15%, orange 15%, orange 40%, #092349 40%, #092349 70%, orange 70%, orange 88%, #092349 88%, #092349 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+.app__sloganText::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.08rem;
+  background: linear-gradient(45deg, #092349 0%, #092349 15%, orange 15%, orange 40%, #092349 40%, #092349 70%, orange 70%, orange 88%, #092349 88%, #092349 100%);
+}
+
+.app__dateTimeContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.5rem 0.2rem 0rem 0rem;
+}
+
+.app__dateTime {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.3rem;
+  font-weight: 500;
+  letter-spacing: 0.08rem;
+  margin: 0 0.05rem;
+  -webkit-box-shadow: 0 0 0.1rem #071b46;
+          box-shadow: 0 0 0.1rem #071b46;
+  text-shadow: 0 0 2px #071b46;
+}
+
+.app__time {
+  border-radius: 0.25rem 0 0 0.25rem;
+  color: #eee;
+  background: rgba(210, 105, 30, 0.8);
+}
+
+.app__date {
+  border-radius: 0 0.25rem 0.25rem 0;
+  background: rgba(210, 105, 30, 0.3);
+  color: #ccc;
+}
+
 .app__logoContainer {
   z-index: 999;
-  width: 8.5rem;
+  width: 7rem;
 }
 
 .app__logoContainer .logo {
@@ -45,36 +100,14 @@
      object-fit: contain;
 }
 
-.app__sloganText {
-  color: rgba(255, 165, 0, 0.85);
-  font-size: 0.45rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08rem;
-  font-weight: 500;
-  font-style: italic;
-  text-shadow: 0 0 0.11rem #020e1f;
-  position: relative;
-}
-
-.app__sloganText::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0.05rem;
-  background: rgba(255, 165, 0, 0.85);
-}
-
 .app__docketContainer {
   margin: 0 auto;
-  width: 90%;
+  width: 95%;
   max-width: 850px;
   min-height: 80vh;
   background: rgba(31, 50, 78, 0.5);
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(31, 50, 78, 0.8)), to(rgba(31, 50, 78, 0.1)));
   background: linear-gradient(180deg, rgba(31, 50, 78, 0.8) 0%, rgba(31, 50, 78, 0.1) 100%);
-  border-radius: 0.5rem;
   border-radius: 0 0 0.5rem 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -89,7 +122,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0.5rem;
+  padding: 1rem 0.3rem;
   z-index: 999;
 }
 
@@ -647,20 +680,25 @@
           box-shadow: 0px 0px 2px black;
 }
 
-@media screen and (min-width: 768px) {
-  .app__header {
-    padding: 0.8rem;
-  }
+@media screen and (min-width: 550px) {
   .app__logoContainer {
     width: 9rem;
   }
   .app__sloganText {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     letter-spacing: 0.1rem;
     font-weight: 600;
   }
-  .app__sloganText::before {
-    height: 0.05rem;
+  .app__dateTimeContainer {
+    padding: 0.5rem 0.2rem 0rem 0rem;
+  }
+  .app__dateTime {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.4rem;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    -webkit-box-shadow: 0 0 0.11rem #071b46;
+            box-shadow: 0 0 0.11rem #071b46;
   }
   .app__noteMsg p {
     padding: 0.3rem 0.5rem;
@@ -673,22 +711,35 @@
     width: 95vw;
   }
   .app__header {
-    padding: 1rem;
+    padding: 0.8rem 0.5rem;
   }
   .app__logoContainer {
     width: 14rem;
   }
-  .app__sloganText {
-    font-size: 1.3rem;
-    letter-spacing: 0.1rem;
-    font-weight: bolder;
+  .app__dateTimeContainer {
+    padding: 0.8rem 0.3rem 0rem 0rem;
   }
-  .app__sloganText::before {
-    height: 0.08rem;
+  .app__dateTime {
+    font-size: 1.2rem;
+    padding: 0.3rem 0.5rem;
+    font-weight: bold;
+    letter-spacing: 0.11rem;
+    margin: 0 0.1rem;
+    -webkit-box-shadow: 0 0 0.2rem #071b46;
+            box-shadow: 0 0 0.2rem #071b46;
+  }
+  .app__time {
+    border-radius: 0.35rem 0 0 0.35rem;
+  }
+  .app__date {
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .app__sloganText {
+    font-size: 1.1rem;
+    letter-spacing: 0.11rem;
   }
   .app__docketContainer {
     width: 80%;
-    border-radius: 0.5rem;
     border-radius: 0 0 0.5rem 0.5rem;
     padding: 2rem;
   }
@@ -763,11 +814,10 @@
     width: 20rem;
   }
   .app__noteMsg > p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding: 0.3rem 0.8rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
-    text-shadow: 0 0 2px black;
   }
   .bg__horizontalLines {
     top: 2.5rem;
@@ -925,6 +975,34 @@
     left: 1.5%;
     width: 10rem;
     height: 10rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .app__header {
+    padding: 1rem;
+  }
+  .app__dateTimeContainer {
+    padding: 1rem 0.8rem 0rem 0rem;
+  }
+  .app__dateTime {
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem;
+    letter-spacing: 0.25rem;
+    font-weight: bolder;
+    -webkit-box-shadow: 0 0 0.22rem #071b46;
+            box-shadow: 0 0 0.22rem #071b46;
+  }
+  .app__logoContainer {
+    width: 18rem;
+  }
+  .app__sloganText {
+    font-size: 1.5rem;
+    letter-spacing: 0.22rem;
+  }
+  .app__noteMsg > p {
+    font-size: 1rem;
+    letter-spacing: 0.11rem;
   }
 }
 /*# sourceMappingURL=App.css.map */
