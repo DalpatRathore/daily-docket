@@ -1,6 +1,5 @@
 # Daily-Docket
-
-Application-link [https://daily-docket.web.app](https://daily-docket.web.app/)
+#### Application-link:  [https://daily-docket.web.app](https://daily-docket.web.app/)
 
 ## Description
 
@@ -16,4 +15,4 @@ Daily-Docket is a web application built to list-down day-to-day important activi
 ![Daily-Docket-1](https://github.com/DalpatRathore/Daily-Docket/blob/main/daily-docket-2.png)
 
 
-#### Visit : [Daily-Docket](https://daily-docket.web.app/)
+#### Visit: [Daily-Docket](https://daily-docket.web.app/)
