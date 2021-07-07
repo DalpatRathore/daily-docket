@@ -23,9 +23,9 @@
   }
   &__header {
     width: 100%;
-    padding: 0.5rem 0.3rem;
+    padding: 0.8rem 0.3rem;
     display: flex;
-    align-items: flex-end;
+    align-items: stretch;
     justify-content: space-between;
     background: linear-gradient(
       0deg,
@@ -54,36 +54,17 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    position: relative;
-    &::before {
-      position: absolute;
-      content: "";
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 0.08rem;
-      background: linear-gradient(
-        45deg,
-        rgb(9, 35, 73) 0%,
-        rgb(9, 35, 73) 15%,
-        rgb(255, 165, 0) 15%,
-        rgb(255, 165, 0) 40%,
-        rgb(9, 35, 73) 40%,
-        rgb(9, 35, 73) 70%,
-        rgb(255, 165, 0) 70%,
-        rgb(255, 165, 0) 88%,
-        rgb(9, 35, 73) 88%,
-        rgb(9, 35, 73) 100%
-      );
-    }
+    text-shadow: 0 0.15rem 0.35rem rgba(17, 17, 17, 0.5);
+  }
+  &__sloganDateWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
   }
 
   &__dateTimeContainer {
-    position: absolute;
-    top: 0;
-    right: 0;
     display: flex;
-    padding: 0.5rem 0.2rem 0rem 0rem;
   }
   &__dateTime {
     font-size: 0.7rem;
@@ -91,22 +72,27 @@
     font-weight: 500;
     letter-spacing: 0.08rem;
     margin: 0 0.05rem;
-    box-shadow: 0 0 0.1rem rgb(7, 27, 70);
-    text-shadow: 0 0 2px rgb(7, 27, 70);
+    background: linear-gradient(180deg, #d6d6d6 0%, #ffffff 100%);
+    box-shadow: inset -3.04801e-16px -4.97778px 4.97778px #cccccc,
+      inset 3.04801e-16px 4.97778px 4.97778px #ffffff;
   }
   &__time {
     border-radius: 0.25rem 0 0 0.25rem;
-    color: #eee;
-    background: rgba(210, 105, 30, 0.8);
+    color: rgb(6, 29, 58);
+    text-shadow: 0px 0.15rem 0.15rem rgba(8, 39, 68, 0.5);
   }
   &__date {
     border-radius: 0 0.25rem 0.25rem 0;
-    background: rgba(210, 105, 30, 0.3);
-    color: #ccc;
+    color: #fff;
+    text-shadow: 0 0 0.11rem rgb(7, 23, 56);
   }
+
   &__logoContainer {
     z-index: 999;
     width: 7rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.25rem #111;
+
     & .logo {
       width: 100%;
       height: 100%;
@@ -347,7 +333,6 @@
       border-radius: 0.15rem 0 0 0;
       padding: 0.3rem 0.5rem;
       background: rgba(0, 0, 0, 0.2);
-      text-transform: capitalize;
       font-weight: 600;
       letter-spacing: 0.1rem;
       font-size: 0.5rem;
@@ -621,15 +606,12 @@
       letter-spacing: 0.1rem;
       font-weight: 600;
     }
-    &__dateTimeContainer {
-      padding: 0.5rem 0.2rem 0rem 0rem;
-    }
+
     &__dateTime {
       font-size: 0.9rem;
       padding: 0.2rem 0.4rem;
       letter-spacing: 0.1rem;
       font-weight: 600;
-      box-shadow: 0 0 0.11rem rgb(7, 27, 70);
     }
 
     &__noteMsg p {
@@ -646,30 +628,30 @@
     }
     &__header {
       padding: 0.8rem 0.5rem;
+      padding: 1rem 0.7rem;
     }
     &__logoContainer {
       width: 14rem;
     }
-    &__dateTimeContainer {
-      padding: 0.8rem 0.3rem 0rem 0rem;
-    }
+
     &__dateTime {
       font-size: 1.2rem;
-      padding: 0.3rem 0.5rem;
+      padding: 0.5rem 0.8rem;
       font-weight: bold;
-      letter-spacing: 0.11rem;
+      letter-spacing: 0.15rem;
       margin: 0 0.1rem;
-      box-shadow: 0 0 0.2rem rgb(7, 27, 70);
     }
     &__time {
-      border-radius: 0.35rem 0 0 0.35rem;
+      text-shadow: 0px 0.3rem 0.25rem rgba(8, 39, 68, 0.5);
     }
     &__date {
-      border-radius: 0 0.35rem 0.35rem 0;
+      text-shadow: 0 0 0.15rem rgb(7, 23, 56);
     }
+
     &__sloganText {
       font-size: 1.1rem;
       letter-spacing: 0.11rem;
+      text-shadow: 0 0.25rem 0.5rem rgba(17, 17, 17, 0.5);
     }
     &__docketContainer {
       width: 80%;
@@ -933,17 +915,14 @@
 @media screen and (min-width: 1440px) {
   .app {
     &__header {
-      padding: 1rem;
+      padding: 1.2rem;
     }
-    &__dateTimeContainer {
-      padding: 1rem 0.8rem 0rem 0rem;
-    }
+
     &__dateTime {
       font-size: 1.5rem;
-      padding: 0.4rem 0.8rem;
+      padding: 0.8rem 1rem;
       letter-spacing: 0.25rem;
       font-weight: bolder;
-      box-shadow: 0 0 0.22rem rgb(7, 27, 70);
     }
     &__logoContainer {
       width: 18rem;

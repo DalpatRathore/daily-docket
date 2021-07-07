@@ -7,6 +7,36 @@ import { MdClear, MdCheckBoxOutlineBlank } from "react-icons/md";
 import { FaTrashAlt, FaEdit, FaCheckDouble } from "react-icons/fa";
 import { v4 as uuidv4 } from "uuid";
 import { motion, AnimatePresence } from "framer-motion";
+
+const timeDateVariants = {
+  enter: {
+    scale: 0,
+    opacity: 0,
+  },
+  center: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+    },
+  },
+};
+
+const sloganVariants = {
+  enter: {
+    x: "-80vw",
+    opacity: "0",
+  },
+  center: {
+    x: "0",
+    opacity: "1",
+    transition: {
+      x: { type: "spring", bounce: 0.5, duration: 3, delay: 5 },
+      opacity: { duration: 0.1, delay: 5 },
+    },
+  },
+};
+
 const formVariants = {
   enter: {
     x: "-100%",
@@ -71,14 +101,27 @@ function App() {
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
 
-  let dateStr = new Date().toDateString();
-  let timeStr = new Date().toLocaleTimeString();
+  const optionsDate = {
+    weekday: "short",
+    day: "2-digit",
+    month: "short",
+    year: "2-digit",
+  };
+
+  const optionsTime = {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  };
+  const dateStr = new Date().toLocaleDateString("en-US", optionsDate);
+  const timeStr = new Date().toLocaleTimeString("en-US", optionsTime);
   const [time, setTime] = useState(timeStr);
   const [date, setDate] = useState(dateStr);
 
   const updateTime = () => {
-    dateStr = new Date().toDateString();
-    timeStr = new Date().toLocaleTimeString();
+    const dateStr = new Date().toLocaleDateString("en-US", optionsDate);
+    const timeStr = new Date().toLocaleTimeString("en-US", optionsTime);
     setTime(timeStr);
     setDate(dateStr);
   };
@@ -159,14 +202,28 @@ function App() {
     <div className="app">
       <div className="app__container">
         <header className="app__header">
-          <div className="app__dateTimeContainer">
-            <span className="app__dateTime app__time">{time}</span>
-            <span className="app__dateTime app__date">{date}</span>
-          </div>
           <div className="app__logoContainer">
             <Logo></Logo>
           </div>
-          <p className="app__sloganText">Highly powered productivity tool</p>
+          <div className="app__sloganDateWrapper">
+            <motion.div
+              className="app__dateTimeContainer"
+              variants={timeDateVariants}
+              initial="enter"
+              animate="center"
+            >
+              <span className="app__dateTime app__time">{time}</span>
+              <span className="app__dateTime app__date">{date}</span>
+            </motion.div>
+            <motion.p
+              className="app__sloganText"
+              variants={sloganVariants}
+              initial="enter"
+              animate="center"
+            >
+              Highly powered productivity tool
+            </motion.p>
+          </div>
         </header>
         <main className="app__docketContainer">
           <motion.form
@@ -321,7 +378,7 @@ function App() {
           <span></span>
         </div>
         <div className="app__noteMsg">
-          <p>NOTE: Stores data locally</p>
+          <p>NOTE: Store's data locally.</p>
         </div>
       </div>
     </div>
