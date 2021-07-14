@@ -221,8 +221,8 @@ function App() {
               initial="enter"
               animate="center"
             >
-              Highly powered productivity tool
-            </motion.p>
+              The Best Productivity Tool
+          </motion.p>
           </div>
         </header>
         <main className="app__docketContainer">

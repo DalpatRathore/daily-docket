@@ -23,7 +23,7 @@
   }
   &__header {
     width: 100%;
-    padding: 0.8rem 0.3rem;
+    padding: 12px 5px;
     display: flex;
     align-items: stretch;
     justify-content: space-between;
@@ -34,19 +34,19 @@
     );
   }
   &__sloganText {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+    font-size: clamp(12px, 0.8rem, 30px);
     text-transform: uppercase;
-    font-weight: 500;
     font-style: italic;
     background: linear-gradient(
       45deg,
       rgb(9, 35, 73) 0%,
-      rgb(9, 35, 73) 15%,
-      rgb(255, 165, 0) 15%,
-      rgb(255, 165, 0) 40%,
-      rgb(9, 35, 73) 40%,
-      rgb(9, 35, 73) 70%,
-      rgb(255, 165, 0) 70%,
+      rgb(9, 35, 73) 10%,
+      rgb(255, 165, 0) 10%,
+      rgb(255, 165, 0) 25%,
+      rgb(9, 35, 73) 25%,
+      rgb(9, 35, 73) 55%,
+      rgb(255, 165, 0) 55%,
       rgb(255, 165, 0) 88%,
       rgb(9, 35, 73) 88%,
       rgb(9, 35, 73) 100%
@@ -67,8 +67,9 @@
     display: flex;
   }
   &__dateTime {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.3rem;
+    font-size: 0.75rem;
+    font-size: clamp(12px, 0.75rem, 30px);
+    padding: 3px 5px;
     font-weight: 500;
     letter-spacing: 0.08rem;
     margin: 0 0.05rem;
@@ -89,7 +90,8 @@
 
   &__logoContainer {
     z-index: 999;
-    width: 7rem;
+    width: 6.5rem;
+    width: clamp(100px, 6.5rem, 120px);
     border-radius: 0.25rem;
     box-shadow: 0 0 0.25rem #111;
 
@@ -102,7 +104,7 @@
   }
 
   &__docketContainer {
-    margin: 0 auto;
+    margin: 0 auto 2rem auto;
     width: 95%;
     max-width: 850px;
     min-height: 80vh;
@@ -117,7 +119,7 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    padding: 1rem 0.3rem;
+    padding: 15px 5px;
     z-index: 999;
   }
   &__inputContainer {
@@ -181,7 +183,7 @@
     border: none;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: #ddd;
     border-radius: 0 0.25rem 0.25rem 0;
     background: rgba(31, 50, 78, 1);
@@ -263,6 +265,7 @@
     text-transform: capitalize;
     color: #ddd;
     flex: 1;
+    overflow-wrap: anywhere;
   }
   &__taskText--done {
     text-decoration: line-through;
@@ -317,9 +320,10 @@
   &__dontForget {
     margin-top: 2rem;
     width: 10rem;
+    height: 7rem;
     & img {
       width: 100%;
-      object-fit: contain;
+      height: 100%;
       display: block;
       animation: revolve 5s linear infinite;
       transform-origin: top center;
@@ -335,7 +339,7 @@
       background: rgba(0, 0, 0, 0.2);
       font-weight: 600;
       letter-spacing: 0.1rem;
-      font-size: 0.5rem;
+      font-size: 0.75rem;
       color: #bbb;
       text-shadow: 0 0 2px rgba(0, 0, 0, 1);
     }
@@ -600,23 +604,25 @@
   .app {
     &__logoContainer {
       width: 9rem;
+      width: clamp(100px, 9rem, 200px);
     }
     &__sloganText {
-      font-size: 0.9rem;
+      font-size: 1rem;
+      font-size: clamp(12px, 1rem, 30px);
       letter-spacing: 0.1rem;
       font-weight: 600;
     }
 
     &__dateTime {
       font-size: 0.9rem;
-      padding: 0.2rem 0.4rem;
+      font-size: clamp(12px, 0.9rem, 30px);
+      padding: 3.5px 6.5px;
       letter-spacing: 0.1rem;
       font-weight: 600;
     }
 
     &__noteMsg p {
       padding: 0.3rem 0.5rem;
-      font-size: 0.7rem;
     }
   }
 }
@@ -627,16 +633,18 @@
       width: 95vw;
     }
     &__header {
-      padding: 0.8rem 0.5rem;
-      padding: 1rem 0.7rem;
+      padding: 16px 11px;
     }
     &__logoContainer {
       width: 14rem;
+      width: clamp(100px, 14rem, 450px);
     }
 
     &__dateTime {
       font-size: 1.2rem;
-      padding: 0.5rem 0.8rem;
+      font-size: clamp(12px, 1.2rem, 30px);
+      padding: 8px 12px;
+
       font-weight: bold;
       letter-spacing: 0.15rem;
       margin: 0 0.1rem;
@@ -649,14 +657,15 @@
     }
 
     &__sloganText {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      font-size: clamp(12px, 1.2rem, 30px);
       letter-spacing: 0.11rem;
       text-shadow: 0 0.25rem 0.5rem rgba(17, 17, 17, 0.5);
     }
     &__docketContainer {
       width: 80%;
       border-radius: 0 0 0.5rem 0.5rem;
-      padding: 2rem;
+      padding: 30px;
     }
     &__inputContainer {
       border-radius: 0.5rem;
@@ -712,6 +721,7 @@
     }
     &__taskText {
       font-size: 1rem;
+
       font-weight: 600;
       letter-spacing: 0.1rem;
     }
@@ -730,7 +740,8 @@
     }
     &__dontForget {
       margin-top: 3rem;
-      width: 20rem;
+      width: 18.75rem;
+      height: 13.125rem;
     }
     &__noteMsg > p {
       font-size: 0.9rem;
@@ -915,20 +926,24 @@
 @media screen and (min-width: 1440px) {
   .app {
     &__header {
-      padding: 1.2rem;
+      padding: 20px;
     }
 
     &__dateTime {
       font-size: 1.5rem;
-      padding: 0.8rem 1rem;
+      font-size: clamp(12px, 1.5rem, 30px);
+
+      padding: 12.8px 16px;
       letter-spacing: 0.25rem;
       font-weight: bolder;
     }
     &__logoContainer {
       width: 18rem;
+      width: clamp(100px, 18rem, 650px);
     }
     &__sloganText {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      font-size: clamp(12px, 1.8rem, 30px);
       letter-spacing: 0.22rem;
     }
     &__noteMsg > p {
