@@ -34,6 +34,8 @@
 
 .app__sloganText {
   font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   font-size: clamp(12px, 0.8rem, 30px);
   text-transform: uppercase;
   font-style: italic;
@@ -64,6 +66,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 2px;
 }
 
 .app__dateTime {
@@ -694,15 +697,14 @@
     width: clamp(100px, 9rem, 200px);
   }
   .app__sloganText {
-    font-size: 1rem;
-    font-size: clamp(12px, 1rem, 30px);
-    letter-spacing: 0.1rem;
-    font-weight: 600;
-  }
-  .app__dateTime {
     font-size: 0.9rem;
     font-size: clamp(12px, 0.9rem, 30px);
-    padding: 3.5px 6.5px;
+    letter-spacing: 0.09rem;
+  }
+  .app__dateTime {
+    font-size: 1rem;
+    font-size: clamp(12px, 0.9rem, 30px);
+    padding: 4px 8px;
     letter-spacing: 0.1rem;
     font-weight: 600;
   }
@@ -737,8 +739,8 @@
     text-shadow: 0 0 0.15rem #071738;
   }
   .app__sloganText {
-    font-size: 1.2rem;
-    font-size: clamp(12px, 1.2rem, 30px);
+    font-size: 1.3rem;
+    font-size: clamp(12px, 1.3rem, 30px);
     letter-spacing: 0.11rem;
     text-shadow: 0 0.25rem 0.5rem rgba(17, 17, 17, 0.5);
   }

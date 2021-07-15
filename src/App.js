@@ -7,6 +7,9 @@ import { MdClear, MdCheckBoxOutlineBlank } from "react-icons/md";
 import { FaTrashAlt, FaEdit, FaCheckDouble } from "react-icons/fa";
 import { v4 as uuidv4 } from "uuid";
 import { motion, AnimatePresence } from "framer-motion";
+import addAlert from "./audios/add-alert.wav";
+import doneAlert from "./audios/done-alert.wav";
+import deleteAlert from "./audios/delete-alert.wav";
 
 const timeDateVariants = {
   enter: {
@@ -46,7 +49,7 @@ const formVariants = {
     x: 0,
     opacity: 1,
     transition: {
-      x: { type: "spring", stiffness: 500, duration: 0.5 },
+      x: { type: "spring", stiffness: 300, duration: 1 },
       opacity: { duration: 0.5 },
     },
   },
@@ -101,6 +104,10 @@ function App() {
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
 
+  const taskAdded = new Audio(addAlert);
+  const taskDone = new Audio(doneAlert);
+  const taskDeleted = new Audio(deleteAlert);
+
   const optionsDate = {
     weekday: "short",
     day: "2-digit",
@@ -128,6 +135,10 @@ function App() {
 
   setInterval(updateTime, 1000);
 
+  const playSound = audioFile => {
+    audioFile.play();
+  };
+
   /* --- Adding task to the Docket ---*/
 
   const submitTask = e => {
@@ -151,6 +162,7 @@ function App() {
         ...docket,
         { id: uuidv4(), taskText: inputText, isDone: false },
       ]);
+      playSound(taskAdded);
     }
 
     setInputText("");
@@ -171,6 +183,7 @@ function App() {
         return task;
       })
     );
+    playSound(taskDone);
   };
   /* --- Editing task of the Docket ---*/
   const editingTask = id => {
@@ -183,6 +196,7 @@ function App() {
   /* --- Removing task from the Docket ---*/
   const removeTask = id => {
     setDocket(docket.filter(task => task.id !== id));
+    playSound(taskDeleted);
   };
 
   /* --- Clearing input box ---*/
@@ -222,7 +236,7 @@ function App() {
               animate="center"
             >
               The Best Productivity Tool
-          </motion.p>
+            </motion.p>
           </div>
         </header>
         <main className="app__docketContainer">
@@ -329,7 +343,6 @@ function App() {
 
           {docket.length > 1 && (
             <button
-              // disabled={isEditing ? "true" : ""}
               className={
                 isEditing
                   ? "app__clearDocket app__clearDocket--disabled"
@@ -341,6 +354,9 @@ function App() {
             </button>
           )}
         </main>
+        <div className="app__noteMsg">
+          <p>NOTE: App store's data locally.</p>
+        </div>
 
         <div className="bg__verticalLines">
           <span></span>
@@ -376,9 +392,6 @@ function App() {
           <span></span>
           <span></span>
           <span></span>
-        </div>
-        <div className="app__noteMsg">
-          <p>NOTE: Store's data locally.</p>
         </div>
       </div>
     </div>
