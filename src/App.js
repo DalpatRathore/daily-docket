@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Logo from "./Logo";
-import dontForget from "./dont-forget.png";
+// import dontForget from "./dont-forget.png";
 import { RiPlayListAddLine, RiEdit2Fill } from "react-icons/ri";
 import { MdClear, MdCheckBoxOutlineBlank } from "react-icons/md";
 import { FaTrashAlt, FaEdit, FaCheckDouble } from "react-icons/fa";
@@ -97,17 +97,15 @@ const getLocalStorage = () => {
     return [];
   }
 };
+const taskAdded = new Audio(addAlert);
+const taskDone = new Audio(doneAlert);
+const taskDeleted = new Audio(deleteAlert);
 
 function App() {
   const [inputText, setInputText] = useState("");
   const [docket, setDocket] = useState(getLocalStorage);
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
-
-  const taskAdded = new Audio(addAlert);
-  const taskDone = new Audio(doneAlert);
-  const taskDeleted = new Audio(deleteAlert);
-
   const optionsDate = {
     weekday: "short",
     day: "2-digit",
@@ -157,6 +155,7 @@ function App() {
 
       setEditID(null);
       setIsEditing(false);
+      playSound(taskAdded);
     } else {
       setDocket([
         ...docket,
@@ -164,7 +163,6 @@ function App() {
       ]);
       playSound(taskAdded);
     }
-
     setInputText("");
   };
   /* --- Adding docket to the local storage ---*/
@@ -337,7 +335,7 @@ function App() {
               initial="enter"
               animate="center"
             >
-              <img src={dontForget} alt="don't forget" />
+              <img src="/images/dont-forget.png" alt="don't forget" />
             </motion.div>
           )}
 

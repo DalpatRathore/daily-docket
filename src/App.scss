@@ -107,11 +107,11 @@
   }
 
   &__docketContainer {
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 1rem auto;
     width: 95%;
     max-width: 850px;
-    min-height: 65vh;
-    background: rgba(31, 50, 78, 0.5);
+    min-height: 80vh;
+    background: rgba(75, 111, 165, 0.5);
     background: linear-gradient(
       180deg,
       rgba(31, 50, 78, 0.8) 0%,
@@ -666,6 +666,7 @@
     }
     &__docketContainer {
       width: 80%;
+      min-height: 75vh;
       border-radius: 0 0 0.5rem 0.5rem;
       padding: 30px;
     }
