@@ -133,6 +133,8 @@ function App() {
 
   setInterval(updateTime, 1000);
 
+  /* --- Sound alert function ---*/
+
   const playSound = audioFile => {
     audioFile.play();
   };
