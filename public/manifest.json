@@ -26,8 +26,7 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#05253f",
   "background_color": "#ffffff",
-  "orientation": "portrait-primary",
   "description": "App to maintain a daily checklist of the important activities."
 }

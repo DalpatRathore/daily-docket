@@ -1,15 +1,12 @@
 const staticCache = "site-static-v1";
+
 const assets = [
   "/",
   "/index.html",
+  "/icons/favicon.ico",
   "/static/js/bundle.js",
   "/static/js/main.chunk.js",
   "/static/js/vendors~main.chunk.js",
-  "/images/dont-forget.png",
-  "/icons/favicon.ico",
-  "/static/media/done-alert.f490b890.wav",
-  "/static/media/delete-alert.28d0f02a.wav",
-  "/static/media/add-alert.8fe3317f.wav",
 ];
 
 const self = this;
@@ -23,13 +20,16 @@ self.addEventListener("install", e => {
 });
 
 self.addEventListener("fetch", e => {
-  if (!navigator.onLine) {
-    e.respondWith(
-      caches.match(e.request).then(cacheResults => {
-        return cacheResults;
+  e.respondWith(
+    caches
+      .match(e.request)
+      .then(cacheResults => {
+        return cacheResults || fetch(e.request);
       })
-    );
-  }
+      .catch(() => {
+        console.log("no internet connection");
+      })
+  );
 });
 
 self.addEventListener("activate", e => {

@@ -691,7 +691,7 @@
           box-shadow: 0px 0px 2px black;
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 450px) {
   .app__logoContainer {
     width: 9rem;
     width: clamp(100px, 9rem, 200px);

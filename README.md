@@ -4,7 +4,7 @@
 
 ## Description
 
-Daily-Docket is a **`Progressive Web App (PWA)`** built to list-down day-to-day important activities or tasks like daily planner. It is basically Todo list web-application or one can simply say digital daily planner.
+Daily-Docket is a **[Progressive Web App (PWA)](https://web.dev/progressive-web-apps/)** built to list-down day-to-day important activities or tasks like daily planner. It is basically Todo list web-application or one can simply say daily digital checklist.
 
 ### `Daily-Docket Screenshot-1:`
 
