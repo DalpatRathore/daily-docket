@@ -12,6 +12,6 @@ Daily-Docket is a **[Progressive Web App (PWA)](https://web.dev/progressive-web-
 
 ### `Daily-Docket Screenshot-2:`
 
-![Daily-Docket-1](https://github.com/DalpatRathore/Daily-Docket/blob/exhibit/display/daily-docket-1.jpg)
+![Daily-Docket-1](https://github.com/DalpatRathore/Daily-Docket/blob/exhibit/display/daily-docket-2.jpg)
 
 #### Visit: [Daily-Docket](https://daily-docket.web.app/)

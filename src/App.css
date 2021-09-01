@@ -5,9 +5,8 @@
 }
 
 .app__container {
-  width: 99vw;
   max-width: var(--maxWidth);
-  min-height: 100vh;
+  min-height: 95vh;
   margin: 0 auto;
   overflow: hidden;
   background: -webkit-gradient(linear, left top, right top, from(rgba(31, 50, 78, 0.5)), color-stop(51.62%, rgba(117, 81, 55, 0.5)), color-stop(99.99%, rgba(31, 50, 78, 0.5)));
@@ -22,12 +21,14 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(249, 178, 78, 0.5)), to(#1c547c));
   background: linear-gradient(0deg, rgba(249, 178, 78, 0.5) 0%, #1c547c 100%);
 }
@@ -96,8 +97,8 @@
 
 .app__logoContainer {
   z-index: 999;
-  width: 6.5rem;
-  width: clamp(100px, 6.5rem, 120px);
+  width: 8rem;
+  width: clamp(100px, 8rem, 120px);
   border-radius: 0.25rem;
   -webkit-box-shadow: 0 0 0.25rem #111;
           box-shadow: 0 0 0.25rem #111;
@@ -693,7 +694,7 @@
 
 @media screen and (min-width: 450px) {
   .app__logoContainer {
-    width: 9rem;
+    width: 10rem;
     width: clamp(100px, 9rem, 200px);
   }
   .app__sloganText {
@@ -718,6 +719,16 @@
     width: 95vw;
   }
   .app__header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 16px 11px;
   }
   .app__logoContainer {

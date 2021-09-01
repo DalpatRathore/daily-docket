@@ -7,9 +7,8 @@
     rgba(31, 50, 78, 0.8) 100%
   );
   &__container {
-    width: 99vw;
     max-width: var(--maxWidth);
-    min-height: 100vh;
+    min-height: 95vh;
     margin: 0 auto;
     overflow: hidden;
     background: linear-gradient(
@@ -25,8 +24,10 @@
     width: 100%;
     padding: 12px 5px;
     display: flex;
-    align-items: stretch;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
     background: linear-gradient(
       0deg,
       rgba(249, 178, 78, 0.5) 0%,
@@ -93,8 +94,9 @@
 
   &__logoContainer {
     z-index: 999;
-    width: 6.5rem;
-    width: clamp(100px, 6.5rem, 120px);
+    width: 8rem;
+    width: clamp(100px, 8rem, 120px);
+
     border-radius: 0.25rem;
     box-shadow: 0 0 0.25rem #111;
 
@@ -607,7 +609,7 @@
 @media screen and (min-width: 450px) {
   .app {
     &__logoContainer {
-      width: 9rem;
+      width: 10rem;
       width: clamp(100px, 9rem, 200px);
     }
     &__sloganText {
@@ -636,6 +638,9 @@
       width: 95vw;
     }
     &__header {
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: space-between;
       padding: 16px 11px;
     }
     &__logoContainer {
