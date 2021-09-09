@@ -1,7 +1,6 @@
 {
   "hosting": {
     "public": "build",
-    "site": "daily-docket",
     "ignore": [
       "firebase.json",
       "**/.*",

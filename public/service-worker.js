@@ -5,10 +5,10 @@ const assets = [
   "/index.html",
   "/icons/favicon.ico",
   "images/dont-forget.png",
-  "static/js/runtime-main.881da6c9.js",
-  "static/js/2.efa9d503.chunk.js",
-  "static/css/main.e0b71711.chunk.css",
-  "static/js/main.022efb73.chunk.js",
+  "static/js/runtime-main.56f8d272.js",
+  "static/js/2.0b9c8a10.chunk.js",
+  "static/css/main.eb24d730.chunk.css",
+  "static/js/main.009f0867.chunk.js",
 ];
 
 const self = this;
