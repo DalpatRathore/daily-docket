@@ -8,10 +8,10 @@ Daily Docket is a **[Progressive Web App (PWA)](https://web.dev/progressive-web-
 
 #### `Screenshot-1:`
 
-![Daily Docket-1](https://github.com/DalpatRathore/Daily-Docket/blob/exhibit/display/daily-docket-1.jpg)
+![Daily Docket-1](https://github.com/DalpatRathore/Daily-Docket/blob/main/display/daily-docket-1.jpg)
 
 #### `Screenshot-2:`
 
-![Daily Docket-2](https://github.com/DalpatRathore/Daily-Docket/blob/exhibit/display/daily-docket-2.jpg)
+![Daily Docket-2](https://github.com/DalpatRathore/Daily-Docket/blob/main/display/daily-docket-2.jpg)
 
 #### Visit: [Daily Docket](https://dailydocket.web.app/)
