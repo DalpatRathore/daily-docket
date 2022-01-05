@@ -1,16 +1,16 @@
-# Daily Docket
+# <img align="center" alt="" width="40" src="https://github.com/DalpatRathore/daily-docket/blob/main/public/icons/icon-192x192.png"> Daily Docket
 
-#### Application-link: [https://dailydocket.web.app](https://dailydocket.web.app/)
+#### `App-link:` [https://dailydocket.web.app](https://dailydocket.web.app/)
 
 ## Description
 
 Daily Docket is a **[Progressive Web App (PWA)](https://web.dev/progressive-web-apps/)** built to list-down day-to-day important activities or tasks like daily planner. It is basically Todo list web-application or one can simply say daily digital checklist.
 
-### `Daily Docket Screenshot-1:`
+#### `Screenshot-1:`
 
 ![Daily Docket-1](https://github.com/DalpatRathore/Daily-Docket/blob/exhibit/display/daily-docket-1.jpg)
 
-### `Daily Docket Screenshot-2:`
+#### `Screenshot-2:`
 
 ![Daily Docket-2](https://github.com/DalpatRathore/Daily-Docket/blob/exhibit/display/daily-docket-2.jpg)
 
