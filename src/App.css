@@ -35,9 +35,9 @@
 
 .app__sloganText {
   font-size: 0.8rem;
+  font-size: clamp(12px, 0.8rem, 30px);
   font-weight: 600;
   letter-spacing: 0.5px;
-  font-size: clamp(12px, 0.8rem, 30px);
   text-transform: uppercase;
   font-style: italic;
   background: linear-gradient(45deg, #092349 0%, #092349 10%, orange 10%, orange 25%, #092349 25%, #092349 55%, orange 55%, orange 88%, #092349 88%, #092349 100%);
@@ -86,7 +86,7 @@
 .app__time {
   border-radius: 0.25rem 0 0 0.25rem;
   color: #061d3a;
-  text-shadow: 0px 0.15rem 0.15rem rgba(8, 39, 68, 0.5);
+  text-shadow: 0 0.15rem 0.15rem rgba(8, 39, 68, 0.5);
 }
 
 .app__date {
@@ -261,8 +261,8 @@
   background: rgba(250, 104, 0, 0.5);
   background: -webkit-gradient(linear, right top, left top, from(rgba(255, 212, 82, 0.8)), to(rgba(84, 74, 125, 0.8)));
   background: linear-gradient(-90deg, rgba(255, 212, 82, 0.8) 0%, rgba(84, 74, 125, 0.8) 100%);
-  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
-          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
   border-radius: 0.25rem;
 }
 
@@ -347,7 +347,6 @@
   font-size: 0.8rem;
   font-weight: bold;
   letter-spacing: 0.1rem;
-  border: none;
   padding: 0.5rem 0.8rem;
   border-radius: 0.25rem;
   color: #1f324e;
@@ -398,7 +397,7 @@
 }
 
 .app__noteMsg p {
-  border-radius: 0.15rem 0 0 0;
+  border-radius: 0.15rem 0 0;
   padding: 0.3rem 0.5rem;
   background: rgba(0, 0, 0, 0.2);
   font-weight: 600;
@@ -593,8 +592,8 @@
   z-index: -2;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(250, 104, 0, 0.5)), to(rgba(31, 50, 78, 0.5)));
   background: linear-gradient(0deg, rgba(250, 104, 0, 0.5), rgba(31, 50, 78, 0.5));
-  -webkit-box-shadow: 0px 0px 2px black;
-          box-shadow: 0px 0px 2px black;
+  -webkit-box-shadow: 0 0 2px black;
+          box-shadow: 0 0 2px black;
   border-radius: 45% 55% 0% 100% / 100% 51% 49% 0%;
 }
 
@@ -605,8 +604,8 @@
   height: 100%;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(250, 104, 0, 0.5)), to(rgba(31, 50, 78, 0.5)));
   background: linear-gradient(0deg, rgba(250, 104, 0, 0.5), rgba(31, 50, 78, 0.5));
-  -webkit-box-shadow: 0px 0px 2px black;
-          box-shadow: 0px 0px 2px black;
+  -webkit-box-shadow: 0 0 2px black;
+          box-shadow: 0 0 2px black;
   border-radius: 45% 55% 0% 100% / 100% 51% 49% 0%;
 }
 
@@ -642,8 +641,8 @@
   border-radius: 65% 35% 45% 55% / 51% 16% 84% 49%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(249, 178, 78, 0.5)), to(rgba(28, 84, 124, 0.8)));
   background: linear-gradient(180deg, rgba(249, 178, 78, 0.5) 0%, rgba(28, 84, 124, 0.8) 100%);
-  -webkit-box-shadow: 0px 0px 2px black;
-          box-shadow: 0px 0px 2px black;
+  -webkit-box-shadow: 0 0 2px black;
+          box-shadow: 0 0 2px black;
 }
 
 .bg__shapes-2 > span:nth-child(2) {
@@ -652,8 +651,8 @@
   border-radius: 43% 27% 69% 45% / 72% 39% 62% 9%;
   background: -webkit-gradient(linear, left top, right top, from(rgba(61, 17, 131, 0.3)), to(rgba(185, 133, 19, 0.3)));
   background: linear-gradient(90deg, rgba(61, 17, 131, 0.3) 0%, rgba(185, 133, 19, 0.3) 100%);
-  -webkit-box-shadow: 0px 0px 2px black;
-          box-shadow: 0px 0px 2px black;
+  -webkit-box-shadow: 0 0 2px black;
+          box-shadow: 0 0 2px black;
 }
 
 .bg__shapes-2 > span:nth-child(3) {
@@ -664,8 +663,8 @@
   border-radius: 43% 27% 69% 45% / 72% 39% 62% 9%;
   background: -webkit-gradient(linear, left top, right top, from(rgba(61, 17, 131, 0.3)), to(rgba(185, 133, 19, 0.3)));
   background: linear-gradient(90deg, rgba(61, 17, 131, 0.3) 0%, rgba(185, 133, 19, 0.3) 100%);
-  -webkit-box-shadow: 0px 0px 2px black;
-          box-shadow: 0px 0px 2px black;
+  -webkit-box-shadow: 0 0 2px black;
+          box-shadow: 0 0 2px black;
 }
 
 .bg__shapes-2 > span:nth-child(4) {
@@ -676,8 +675,8 @@
   border-radius: 62% 3% 72% 0% / 39% 40% 37% 0%;
   background: -webkit-gradient(linear, left top, right top, from(rgba(249, 178, 78, 0.5)), to(rgba(94, 11, 69, 0.5)));
   background: linear-gradient(90deg, rgba(249, 178, 78, 0.5) 0%, rgba(94, 11, 69, 0.5) 100%);
-  -webkit-box-shadow: 0px 0px 2px black;
-          box-shadow: 0px 0px 2px black;
+  -webkit-box-shadow: 0 0 2px black;
+          box-shadow: 0 0 2px black;
 }
 
 .bg__shapes-2 > span:nth-child(5) {
@@ -688,8 +687,8 @@
   border-radius: 62% 3% 72% 0% / 39% 40% 37% 0%;
   background: -webkit-gradient(linear, left top, right top, from(rgba(249, 178, 78, 0.5)), to(rgba(94, 11, 69, 0.5)));
   background: linear-gradient(90deg, rgba(249, 178, 78, 0.5) 0%, rgba(94, 11, 69, 0.5) 100%);
-  -webkit-box-shadow: 0px 0px 2px black;
-          box-shadow: 0px 0px 2px black;
+  -webkit-box-shadow: 0 0 2px black;
+          box-shadow: 0 0 2px black;
 }
 
 @media screen and (min-width: 450px) {
@@ -744,7 +743,7 @@
     margin: 0 0.1rem;
   }
   .app__time {
-    text-shadow: 0px 0.3rem 0.25rem rgba(8, 39, 68, 0.5);
+    text-shadow: 0 0.3rem 0.25rem rgba(8, 39, 68, 0.5);
   }
   .app__date {
     text-shadow: 0 0 0.15rem #071738;

@@ -35,10 +35,10 @@
     );
   }
   &__sloganText {
-    font-size: 0.8rem;
+    font-size: 0.8rem; // fall back
+    font-size: clamp(12px, 0.8rem, 30px);
     font-weight: 600;
     letter-spacing: 0.5px;
-    font-size: clamp(12px, 0.8rem, 30px);
     text-transform: uppercase;
     font-style: italic;
     background: linear-gradient(
@@ -84,7 +84,7 @@
   &__time {
     border-radius: 0.25rem 0 0 0.25rem;
     color: rgb(6, 29, 58);
-    text-shadow: 0px 0.15rem 0.15rem rgba(8, 39, 68, 0.5);
+    text-shadow: 0 0.15rem 0.15rem rgba(8, 39, 68, 0.5);
   }
   &__date {
     border-radius: 0 0.25rem 0.25rem 0;
@@ -229,7 +229,7 @@
       rgba(84, 74, 125, 0.8) 100%
     );
 
-    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
     border-radius: 0.25rem;
 
     & > span {
@@ -298,7 +298,6 @@
     font-size: 0.8rem;
     font-weight: bold;
     letter-spacing: 0.1rem;
-    border: none;
     padding: 0.5rem 0.8rem;
     border-radius: 0.25rem;
     color: rgba(31, 50, 78, 1);
@@ -340,7 +339,7 @@
     bottom: 0;
     right: 0;
     & p {
-      border-radius: 0.15rem 0 0 0;
+      border-radius: 0.15rem 0 0;
       padding: 0.3rem 0.5rem;
       background: rgba(0, 0, 0, 0.2);
       font-weight: 600;
@@ -502,7 +501,7 @@
       rgba(250, 104, 0, 0.5),
       rgba(31, 50, 78, 0.5)
     );
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 1);
     border-radius: 45% 55% 0% 100% / 100% 51% 49% 0%;
 
     & > span {
@@ -515,7 +514,7 @@
         rgba(250, 104, 0, 0.5),
         rgba(31, 50, 78, 0.5)
       );
-      box-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+      box-shadow: 0 0 2px rgba(0, 0, 0, 1);
       border-radius: 45% 55% 0% 100% / 100% 51% 49% 0%;
 
       &:nth-child(1) {
@@ -550,7 +549,7 @@
           rgba(249, 178, 78, 0.5) 0%,
           rgba(28, 84, 124, 0.8) 100%
         );
-        box-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+        box-shadow: 0 0 2px rgba(0, 0, 0, 1);
       }
       &:nth-child(2) {
         top: 1%;
@@ -561,7 +560,7 @@
           rgba(61, 17, 131, 0.3) 0%,
           rgba(185, 133, 19, 0.3) 100%
         );
-        box-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+        box-shadow: 0 0 2px rgba(0, 0, 0, 1);
       }
       &:nth-child(3) {
         top: 2%;
@@ -574,7 +573,7 @@
           rgba(61, 17, 131, 0.3) 0%,
           rgba(185, 133, 19, 0.3) 100%
         );
-        box-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+        box-shadow: 0 0 2px rgba(0, 0, 0, 1);
       }
       &:nth-child(4) {
         bottom: 1%;
@@ -587,7 +586,7 @@
           rgba(249, 178, 78, 0.5) 0%,
           rgba(94, 11, 69, 0.5) 100%
         );
-        box-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+        box-shadow: 0 0 2px rgba(0, 0, 0, 1);
       }
       &:nth-child(5) {
         bottom: 2%;
@@ -600,7 +599,7 @@
           rgba(249, 178, 78, 0.5) 0%,
           rgba(94, 11, 69, 0.5) 100%
         );
-        box-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+        box-shadow: 0 0 2px rgba(0, 0, 0, 1);
       }
     }
   }
@@ -658,7 +657,7 @@
       margin: 0 0.1rem;
     }
     &__time {
-      text-shadow: 0px 0.3rem 0.25rem rgba(8, 39, 68, 0.5);
+      text-shadow: 0 0.3rem 0.25rem rgba(8, 39, 68, 0.5);
     }
     &__date {
       text-shadow: 0 0 0.15rem rgb(7, 23, 56);
