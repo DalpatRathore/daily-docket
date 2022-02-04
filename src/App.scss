@@ -6,6 +6,7 @@
     rgba(250, 104, 0, 0.3) 50%,
     rgba(31, 50, 78, 0.8) 100%
   );
+
   &__container {
     max-width: var(--maxWidth);
     min-height: 95vh;
@@ -225,7 +226,7 @@
     background: rgba(250, 104, 0, 0.5);
     background: linear-gradient(
       -90deg,
-      rgba(255, 212, 82, 0.8) 0%,
+      rgba(255, 212, 82, 0.75) 0%,
       rgba(84, 74, 125, 0.8) 100%
     );
 
@@ -269,9 +270,13 @@
     font-weight: 500;
     letter-spacing: 0.05rem;
     text-transform: capitalize;
-    color: #ddd;
+    color: #eee;
     flex: 1;
     overflow-wrap: anywhere;
+    & small {
+      font: inherit;
+      color: #999;
+    }
   }
   &__taskText--done {
     text-decoration: line-through;

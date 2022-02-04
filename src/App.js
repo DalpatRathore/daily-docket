@@ -308,7 +308,7 @@ function App() {
                             : "app__taskText"
                         }
                       >
-                        {i + 1}. {taskText}
+                        <small>{i + 1}.</small> {taskText}
                       </p>
                       <span
                         className={isDone ? "app__editDisabled" : ""}

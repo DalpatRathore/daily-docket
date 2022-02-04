@@ -259,8 +259,8 @@
   padding: 0.2rem;
   list-style: none;
   background: rgba(250, 104, 0, 0.5);
-  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 212, 82, 0.8)), to(rgba(84, 74, 125, 0.8)));
-  background: linear-gradient(-90deg, rgba(255, 212, 82, 0.8) 0%, rgba(84, 74, 125, 0.8) 100%);
+  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 212, 82, 0.75)), to(rgba(84, 74, 125, 0.8)));
+  background: linear-gradient(-90deg, rgba(255, 212, 82, 0.75) 0%, rgba(84, 74, 125, 0.8) 100%);
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
           box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
   border-radius: 0.25rem;
@@ -312,11 +312,16 @@
   font-weight: 500;
   letter-spacing: 0.05rem;
   text-transform: capitalize;
-  color: #ddd;
+  color: #eee;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   overflow-wrap: anywhere;
+}
+
+.app__taskText small {
+  font: inherit;
+  color: #999;
 }
 
 .app__taskText--done {
